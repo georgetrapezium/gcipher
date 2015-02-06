@@ -8,6 +8,7 @@ Ordinate operations:
 <br><br>
 Word operations:
 <input type="button" value="Encrypt word" onclick="encodeWordAlone();"/>
+<input type="button" value="Decrypt word" onclick="decodeWordAlone();"/>
 <br>
 <input type="button" value="Encrypt sentence" onclick="sepWord();"/>
 <input type="button" value="Encrypt paragraph" onclick="sepSentence();"/>
@@ -451,5 +452,62 @@ document.getElementById("text3").value = textToMicrowave.replace(/[&\/\\#,+()$~%
 	if (abcissa==""){abcissa="0";}
 	document.getElementById("text3").value = abcissa;
 }
+
+
+function decodeWordAlone() {
+	var toDecode = document.getElementById("text3").value;
+	toDecode = toDecode.trim();
+	var realz = toDecode.split(".");
+	var abcissa2 = realz[0];
+	var ordinate2 = realz[1];
+	var lenOrd=ordinate2.length;
+	var i=0;
+	var ordinateTran = ""; var abcissaTran = abcissa2.replace("1", "a");;
+	
+	
+	
+	while (i <= lenOrd) {
+	
+	/*Unmicrowave the abcissa*/
+	abcissaTran = abcissaTran.replace("1", "a");
+	abcissaTran = abcissaTran.replace("2", "e");
+	abcissaTran = abcissaTran.replace("3", "i");
+	abcissaTran = abcissaTran.replace("4", "o");
+	abcissaTran = abcissaTran.replace("5", "u");
+	
+	/*Unmicrowave the ordinate*/
+		var xy = ordinate2.substr(i,2);
+		/* AAAAAAAAA */
+		if (xy=="11") {ordinateTran=ordinateTran+"b"}
+		else if (xy=="12") {ordinateTran=ordinateTran+"c"}
+		else if (xy=="13") {ordinateTran=ordinateTran+"d"}
+		/* EEEEEEEEEE */
+		else if (xy=="21") {ordinateTran=ordinateTran+"f"}
+		else if (xy=="22") {ordinateTran=ordinateTran+"g"}
+		else if (xy=="23") {ordinateTran=ordinateTran+"h"}
+		/* IIIIIIIII */
+		else if (xy=="31") {ordinateTran=ordinateTran+"j"}
+		else if (xy=="32") {ordinateTran=ordinateTran+"k"}
+		else if (xy=="33") {ordinateTran=ordinateTran+"l"}
+		else if (xy=="34") {ordinateTran=ordinateTran+"m"}
+		else if (xy=="35") {ordinateTran=ordinateTran+"n"}
+		/* OOOOOOOOOOOO */
+		else if (xy=="41") {ordinateTran=ordinateTran+"p"}
+		else if (xy=="42") {ordinateTran=ordinateTran+"q"}
+		else if (xy=="43") {ordinateTran=ordinateTran+"r"}
+		else if (xy=="44") {ordinateTran=ordinateTran+"s"}
+		else if (xy=="45") {ordinateTran=ordinateTran+"t"}
+	/* UUUUUUUUUUUUUUUUU */       
+		else if (xy=="51") {ordinateTran=ordinateTran+"v"}
+		else if (xy=="52") {ordinateTran=ordinateTran+"w"}
+		else if (xy=="53") {ordinateTran=ordinateTran+"x"}
+		else if (xy=="54") {ordinateTran=ordinateTran+"y"}
+		else if (xy=="55") {ordinateTran=ordinateTran+"z"}
+		i=i+2;
+	}
+	
+	document.getElementById("text3").value = "("+abcissaTran+","+ordinateTran+")";
+}
+
 
 </script>
