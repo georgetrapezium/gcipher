@@ -1,18 +1,19 @@
+
 <textarea id="text3" style="margin: 0px; width: 400px; height: 300px;">Hello. How are you?</textarea>
 <br><br>
-<input type="button" value="Encode ordinate" onclick="encodeOrd();"/>
-<input type="button" value="Decode ordinate" onclick="decodeOrd();"/>
+Ordinate operations:
+<input type="button" value="Encrypt ordinate (Input must only contain consonants)" onclick="encodeOrd();"/>
+<input type="button" value="Decrypt ordinate (Input must only contain a number with 2n digits" onclick="decodeOrd();"/>
+<br><br>
+Word operations:
+<input type="button" value="Encrypt word" onclick="encodeWordAlone();"/>
 <br>
-<input type="button" value="Encode word" onclick="encodeWordAlone();"/>
-<br>
-<input type="button" value="Encode sentence/separate word" onclick="sepWord();"/>
-<input type="button" value="Encode paragraph/Separate Sentence" onclick="sepSentence();"/>
+<input type="button" value="Encrypt sentence" onclick="sepWord();"/>
+<input type="button" value="Encrypt paragraph" onclick="sepSentence();"/>
 <br>
 <input type="button" value="Parse" onclick="parse3();"/>
 
 <script type="application/javascript">
-var encodedSentence = "";
-var encodedPara = "";
 
 function parse3() {
 var textElem = document.getElementById("text3").value;
@@ -21,53 +22,141 @@ document.getElementById("text3").value = textElem.replace(/[&\/\\#?,+()$~%'":*!;
 document.getElementById("text3").value = textElem.replace(/[.]/g, ' +');
 }
 
+   /*_____ ______ _____     _____ ______ _   _ _______ 
+  / ____|  ____|  __ \   / ____|  ____| \ | |__   __|
+ | (___ | |__  | |__) | | (___ | |__  |  \| |  | |   
+  \___ \|  __| |  ___/   \___ \|  __| | . ` |  | |   
+  ____) | |____| |       ____) | |____| |\  |  | |   
+ |_____/|______|_|      |_____/|______|_| \_|  |_|   */
+                                                     
+                                                     
 function sepSentence() {
-
-var textElem = document.getElementById("text3").value;
-textElem = textElem.replace(/[&\/\\#,+()$~%'":*!?;<>0-9{}]/g, '');
+var encodedPara = "";
+var inputPara = document.getElementById("text3").value;
+inputPara = inputPara.replace(/[&\/\\#,+()$~%'":*!?;<>0-9{}]/g, '');
 /*textElem = textElem.replace(/[.]/g, '+');*/
-textElem = textElem.trim();
+inputPara = inputPara.trim();
 
-var sentencez = textElem.split(". ");
-alert("sentence 1:  " + sentencez[0]);
+var sentencez = inputPara.split(". ");
+/*alert("sentence 1:  " + sentencez[0]);
 alert("sentence 2:  " + sentencez[1]);
-alert("sentence 3:  " + sentencez[2]);
+alert("sentence 3:  " + sentencez[2]);*/
 var lensentencez=sentencez.length;
 var i=0;
 
 	while (i<lensentencez){
-		sepWordDe(sentencez[i]);
+		var encodedSentence="";
+		var textSentence = sentencez[i];
+		/*textElem = textElem.replace(/[&\/\\#,+()$~%'":*!?;<>0-9{}]/g, ''); */
+		/* textElem = textElem.replace(/[.]/g, '+');*/ /***NOT NEEDED. ALREADY PARSED IN AN EARLIER FUNCTINO ***/
+		textSentence = textSentence.trim();
+
+		var wordz = textSentence.split(" ");
+		var lenwordz=wordz.length;
+		var j=0;
+
+		while (j<lenwordz){
+			var textWord = wordz[j]/*document.getElementById("text3").value;*/
+			
+			var abcissa = "";
+			var ordinate = "";
+			
+			/**ORDINATE OPERATIONS**/
+			
+						ordinate = textWord.replace(/a/gi, "");
+						ordinate = ordinate.replace(/b/gi, "11");
+						ordinate = ordinate.replace(/c/gi, "12");
+						ordinate = ordinate.replace(/d/gi, "13");
+						
+						ordinate = ordinate.replace(/e/gi, "");
+						ordinate = ordinate.replace(/f/gi, "21");
+						ordinate = ordinate.replace(/g/gi, "22");
+						ordinate = ordinate.replace(/h/gi, "23");
+						
+						ordinate = ordinate.replace(/i/gi, "");
+						ordinate = ordinate.replace(/j/gi, "31");
+						ordinate = ordinate.replace(/k/gi, "32");
+						ordinate = ordinate.replace(/l/gi, "33");
+						ordinate = ordinate.replace(/m/gi, "34");
+						ordinate = ordinate.replace(/n/gi, "35");
+						
+						ordinate = ordinate.replace(/o/gi, "");
+						ordinate = ordinate.replace(/p/gi, "41");
+						ordinate = ordinate.replace(/q/gi, "42");
+						ordinate = ordinate.replace(/r/gi, "43");
+						ordinate = ordinate.replace(/s/gi, "44");
+						ordinate = ordinate.replace(/t/gi, "45");
+						
+						ordinate = ordinate.replace(/u/gi, "");
+						ordinate = ordinate.replace(/v/gi, "51");
+						ordinate = ordinate.replace(/w/gi, "52");
+						ordinate = ordinate.replace(/x/gi, "53");
+						ordinate = ordinate.replace(/y/gi, "54");
+						ordinate = ordinate.replace(/z/gi, "55");
+						if (ordinate==""){ordinate="0"}
+			
+			/**Abcissa operations**/
+			
+						abcissa = textWord.replace(/a/gi, "1");
+						abcissa = abcissa.replace(/b/gi, "");
+						abcissa = abcissa.replace(/c/gi, "");
+						abcissa = abcissa.replace(/d/gi, "");
+						
+						abcissa = abcissa.replace(/e/gi, "2");
+						abcissa = abcissa.replace(/f/gi, "");
+						abcissa = abcissa.replace(/g/gi, "");
+						abcissa = abcissa.replace(/h/gi, "");
+						
+						abcissa = abcissa.replace(/i/gi, "3");
+						abcissa = abcissa.replace(/j/gi, "");
+						abcissa = abcissa.replace(/k/gi, "");
+						abcissa = abcissa.replace(/l/gi, "");
+						abcissa = abcissa.replace(/m/gi, "");
+						abcissa = abcissa.replace(/n/gi, "");
+						
+						abcissa = abcissa.replace(/o/gi, "4");
+						abcissa = abcissa.replace(/p/gi, "");
+						abcissa = abcissa.replace(/q/gi, "");
+						abcissa = abcissa.replace(/r/gi, "");
+						abcissa = abcissa.replace(/s/gi, "");
+						abcissa = abcissa.replace(/t/gi, "");
+						
+						abcissa = abcissa.replace(/u/gi, "5");
+						abcissa = abcissa.replace(/v/gi, "");
+						abcissa = abcissa.replace(/w/gi, "");
+						abcissa = abcissa.replace(/x/gi, "");
+						abcissa = abcissa.replace(/y/gi, "");
+						abcissa = abcissa.replace(/z/gi, "");
+			if (abcissa==""){abcissa="0"}
+			
+			if (encodedSentence==""){encodedSentence= (abcissa+"."+ordinate);} else {
+			encodedSentence= (encodedSentence + " * " + abcissa+"."+ordinate) ;}
+	
+			j=j+1;
+	
+}
+
+if (encodedPara==""){encodedPara = encodedSentence;}
+else {encodedPara = encodedPara + " + " + encodedSentence;}
 		i=i+1;
-		alert(encodedPara);
+		/*alert(encodedPara);*/
 	}
 	
 document.getElementById("text3").value = encodedPara;
 encodedPara="";
-
-
 }
+
+/*   _____ ______ _____     _____ ______ _   _ _______   ______ _   _ _____  
+  / ____|  ____|  __ \   / ____|  ____| \ | |__   __| |  ____| \ | |  __ \ 
+ | (___ | |__  | |__) | | (___ | |__  |  \| |  | |    | |__  |  \| | |  | |
+  \___ \|  __| |  ___/   \___ \|  __| | . ` |  | |    |  __| | . ` | |  | |
+  ____) | |____| |       ____) | |____| |\  |  | |    | |____| |\  | |__| |
+ |_____/|______|_|      |_____/|______|_| \_|  |_|    |______|_| \_|_____/ 
+                                     */                                      
+                                                                           
 
 function sepWordDe(lmao) {
-
-var textElem = lmao;
-/*textElem = textElem.replace(/[&\/\\#,+()$~%'":*!?;<>0-9{}]/g, ''); */
-/* textElem = textElem.replace(/[.]/g, '+');*/ /***NOT NEEDED. ALREADY PARSED IN AN EARLIER FUNCTINO ***/
-textElem = textElem.trim();
-
-var wordz = textElem.split(" ");
-var lenwordz=wordz.length;
-var i=0;
-
-while (i<lenwordz){
-	encodeWord(wordz[i]);
-	i=i+1;
-	
-}
-
-if (encodedPara==""){encodedPara= encodedSentence;} else {
-	encodedPara= (encodedPara + " + " + encodedSentence)}
-
-
+	alert("sepWordDe(lmao) is running");
 }
 
 function sepWord() {
