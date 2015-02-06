@@ -1,18 +1,20 @@
 
 <textarea id="text3" style="margin: 0px; width: 400px; height: 300px;">Hello. How are you?</textarea>
 <br><br>
-Ordinate operations:
+Ordinate operations: (Input must only be consonants/number with 2n digits)<br>
 <input type="button" value="Microwave a word" onclick="microwave();"/><br>
-<input type="button" value="Encrypt ordinate (Input must only contain consonants)" onclick="encodeOrd();"/>
-<input type="button" value="Decrypt ordinate (Input must only contain a number with 2n digits" onclick="decodeOrd();"/>
+<input type="button" value="Encrypt ordinate" onclick="encodeOrd();"/>
+<input type="button" value="Decrypt ordinate" onclick="decodeOrd();"/>
 <br><br>
-Word operations:
+Single word operations: (Input must only contain a single word or a single number of the form abcissa.ordinate<br>
 <input type="button" value="Encrypt word" onclick="encodeWordAlone();"/>
 <input type="button" value="Decrypt word" onclick="decodeWordAlone();"/>
-<br>
+<br><br>
+Sentence operations:
 <input type="button" value="Encrypt sentence" onclick="sepWord();"/>
 <input type="button" value="Encrypt paragraph" onclick="sepSentence();"/>
-<br>
+<br><br>
+Developer tools:<br>
 <input type="button" value="Parse" onclick="parse3();"/>
 
 <script type="application/javascript">
