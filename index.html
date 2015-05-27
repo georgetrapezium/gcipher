@@ -97,35 +97,35 @@ var i=0;
 			/**Abcissa operations**/
 			
 						abcissa = textWord.replace(/a/gi, "1");
-						abcissa = abcissa.replace(/b/gi, "");
-						abcissa = abcissa.replace(/c/gi, "");
-						abcissa = abcissa.replace(/d/gi, "");
-						
-						abcissa = abcissa.replace(/e/gi, "2");
-						abcissa = abcissa.replace(/f/gi, "");
-						abcissa = abcissa.replace(/g/gi, "");
-						abcissa = abcissa.replace(/h/gi, "");
-						
-						abcissa = abcissa.replace(/i/gi, "3");
-						abcissa = abcissa.replace(/j/gi, "");
-						abcissa = abcissa.replace(/k/gi, "");
-						abcissa = abcissa.replace(/l/gi, "");
-						abcissa = abcissa.replace(/m/gi, "");
-						abcissa = abcissa.replace(/n/gi, "");
-						
-						abcissa = abcissa.replace(/o/gi, "4");
-						abcissa = abcissa.replace(/p/gi, "");
-						abcissa = abcissa.replace(/q/gi, "");
-						abcissa = abcissa.replace(/r/gi, "");
-						abcissa = abcissa.replace(/s/gi, "");
-						abcissa = abcissa.replace(/t/gi, "");
-						
-						abcissa = abcissa.replace(/u/gi, "5");
-						abcissa = abcissa.replace(/v/gi, "");
-						abcissa = abcissa.replace(/w/gi, "");
-						abcissa = abcissa.replace(/x/gi, "");
-						abcissa = abcissa.replace(/y/gi, "");
-						abcissa = abcissa.replace(/z/gi, "");
+						abcissa = abcissa.replace(BCDFGHJKLMNPQRSTVWXYZQWRTYPLKJHGFDSZXCVBNM, "");
+					/*	abcissa = abcissa.replace(/c/gi, "");        */
+					/*	abcissa = abcissa.replace(/d/gi, "");        */
+					/*	        */
+						abcissa = abcissa.replace(/e/gi, "2");        
+					/*	abcissa = abcissa.replace(/f/gi, "");        */
+					/*	abcissa = abcissa.replace(/g/gi, "");        */
+					/*	abcissa = abcissa.replace(/h/gi, "");        */
+					/*	        */
+						abcissa = abcissa.replace(/i/gi, "3");        
+					/*	abcissa = abcissa.replace(/j/gi, "");        */
+					/*	abcissa = abcissa.replace(/k/gi, "");        */
+					/*	abcissa = abcissa.replace(/l/gi, "");        */
+					/*	abcissa = abcissa.replace(/m/gi, "");        */
+					/*	abcissa = abcissa.replace(/n/gi, "");        */
+					/*	        */
+						abcissa = abcissa.replace(/o/gi, "4");        
+					/*	abcissa = abcissa.replace(/p/gi, "");        */
+					/*	abcissa = abcissa.replace(/q/gi, "");        */
+					/*	abcissa = abcissa.replace(/r/gi, "");        */
+					/*	abcissa = abcissa.replace(/s/gi, "");        */
+					/*	abcissa = abcissa.replace(/t/gi, "");        */
+					/*	        */
+						abcissa = abcissa.replace(/u/gi, "5");        
+					/*	abcissa = abcissa.replace(/v/gi, "");        */
+					/*	abcissa = abcissa.replace(/w/gi, "");        */
+					/*	abcissa = abcissa.replace(/x/gi, "");        */
+					/*	abcissa = abcissa.replace(/y/gi, "");        */
+					/*	abcissa = abcissa.replace(/z/gi, "");        */
 			if (abcissa==""){abcissa="0"}
 			
 			if (encodedSentence==""){encodedSentence= (abcissa+"."+ordinate);} else {
